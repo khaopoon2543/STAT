@@ -1,0 +1,46 @@
+body {
+    background: #cdc9c3;
+    font-family: 'Prompt', sans-serif;
+    color: #0B0C10;  
+}
+.card{
+    padding: 15px 30px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-bottom-width: .25rem; 
+    font-size: 1.5em;
+}
+.card input{
+    margin-bottom: 10px; 
+}
+.cardnum{
+    display: inline-block;
+    background: #0B0C10;
+    padding: 12px 30px;
+    border-radius: 100px 100px;
+    color:#F5F5EF;
+}
+.jumbotron {
+    font-family: 'Chonburi', cursive;
+    background: #fbf7f0;
+    color:#0B0C10;
+    padding: 2em 0 2em 0;
+}
+.jumbotron p{
+    font-family: 'Prompt', sans-serif;  
+}
+.row a{
+    padding:15px 50px; 
+    border-radius: 100px;
+    width: 50%;
+    border: outset 3px;
+}
+input[type=submit]{
+    padding:15px 50px; 
+    border-radius: 100px;
+    width: 30%;
+    border: outset 3px #0B0C10;
+}

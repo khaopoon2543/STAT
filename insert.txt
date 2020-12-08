@@ -1,0 +1,21 @@
+CREATE TABLE scores (
+	pattern1 int(1),
+	pattern2 int(1),
+	pattern3 int(1),
+	pattern4 int(1),
+	countall int(3)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE scores2 (
+	pattern1 int(1),
+	pattern2 int(1),
+	pattern3 int(1),
+	pattern4 int(1),
+	pattern5 int(1),
+	pattern6 int(1),
+	pattern7 int(1),
+	pattern8 int(1)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
