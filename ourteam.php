@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
-    <title>Finish</title>
+    <title>Ourteam</title>
     
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background: #0B0C10; font-family: 'Source Code Pro', monospace; color:#F5F5EF;">

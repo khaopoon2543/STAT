@@ -1,58 +1,50 @@
 <?php 
     session_start();
     include('server.php');
-
+    
+    //collect answer row5
     $checkbox = $_POST['pattern'];
     foreach ($checkbox as $key => $value) {
-            $pattern = $value;  
+            $row5= $value;
     }
+    $_SESSION['row5']= $row5; 
 
     /*---------------------------------- INSERT to database ----------------------------------*/
 
     $errors = array();
     if (isset($_POST['submit'])) {
 
-        if (empty($pattern)) {
+        if (empty($checkbox)) {
             array_push($errors, "กรุณาเลือกข้อนึงนะค้าบ ;-;");
             $_SESSION['error'] = "กรุณาเลือกข้อนึงนะค้าบ ;-;";
-            header("location: index5.php");   
+            header("location: index.php");   
         }
         
         if (count($errors) == 0) {
+                
+                //ทำตารางเก็บข้อมูลใหม่เป็นแต่ละข้อ 5 ข้อไปเลยแง ;-;
+                $row1 = $_SESSION['row1'];
+                $row2 = $_SESSION['row2'];
+                $row3 = $_SESSION['row3'];
+                $row4 = $_SESSION['row4']; 
+                $row5 = $_SESSION['row5']; 
+    
+                $insert = "INSERT INTO scores4 (row1,row2,row3,row4,row5)VALUES ('$row1','$row2','$row3','$row4','$row5')"; 
+                mysqli_query($conn, $insert);
 
-            if (isset($pattern)) {
 
-                if ($pattern == 7) {
-                    $count = "SELECT * FROM scores2";
-                    $result = mysqli_query($conn, $count);
+                // countall
+                $countall = "SELECT * FROM scores4";
+                $result = mysqli_query($conn, $countall);
 
-                    while($row = mysqli_fetch_array($result)){
-                        $new_count = $row['pattern7'] + 1;
-                    }
-                    $update = "UPDATE scores2 SET pattern7 = $new_count";
-                    mysqli_query($conn, $update);
+                while($row = mysqli_fetch_array($result)){
+                    $new_countall = $row['row_id'];
                 }
-
-                if ($pattern == 8) {
-                    $count = "SELECT * FROM scores2";
-                    $result = mysqli_query($conn, $count);
-
-                    while($row = mysqli_fetch_array($result)){
-                        $new_count = $row['pattern8'] + 1;
-                    }
-                    $update = "UPDATE scores2 SET pattern8 = $new_count";
-                    mysqli_query($conn, $update);
-                }
+                $_SESSION['countall'] = $new_countall;
 
 
                 header('location: finish.php');
                 
-                
-            }
-                
-        }  
-        
+        }                  
     }
-
-
 ?>

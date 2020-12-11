@@ -2,14 +2,7 @@
     session_start();
     include('server.php');
 
-    $countall = "SELECT countall FROM scores";
-                $result = mysqli_query($conn, $countall);
-    while($row = mysqli_fetch_array($result)){
-        $new_countall = $row['countall'];
-    }
-    $update_countall = "UPDATE scores SET countall = $new_countall";
-    mysqli_query($conn, $update_countall);
-    $_SESSION['countall'] = $new_countall;
+    $countall = $_SESSION['countall'];
 ?>
 
 <!doctype html>
@@ -77,13 +70,13 @@
             <div class="row">
                 <div class="col-6 py-3">
                     <div class="card">  
-                        <input type="radio" class="radio mx-1" name="pattern[]" value='5'></input>  
+                        <input type="radio" class="radio mx-1" name="pattern[]" value='1'></input>  
                         “ตำรวจ” ร่วมปรบมือให้กำลังใจทีมแพทย์ พยาบาล สู้โควิด-19
                     </div>
                 </div>
                 <div class="col-6 py-3">
                     <div class="card">  
-                        <input type="radio" class="radio mx-1" name="pattern[]" value='6'></input>  
+                        <input type="radio" class="radio mx-1" name="pattern[]" value='2'></input>  
                         ตำรวจร่วมปรบมือให้กำลังใจทีมแพทย์ พยาบาล สู้โควิด-19 
                     </div>
                 </div>

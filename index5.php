@@ -2,14 +2,7 @@
     session_start();
     include('server.php');
 
-    $countall = "SELECT countall FROM scores";
-                $result = mysqli_query($conn, $countall);
-    while($row = mysqli_fetch_array($result)){
-        $new_countall = $row['countall'];
-    }
-    $update_countall = "UPDATE scores SET countall = $new_countall";
-    mysqli_query($conn, $update_countall);
-    $_SESSION['countall'] = $new_countall;
+    $countall = $_SESSION['countall'];
 ?>
 
 <!doctype html>
@@ -77,13 +70,13 @@
             <div class="row">
                 <div class="col-6 py-3">
                     <div class="card">  
-                        <input type="radio" class="radio mx-1" name="pattern[]" value='7'></input>  
+                        <input type="radio" class="radio mx-1" name="pattern[]" value='1'></input>  
                         รองโฆษก ตร.เชื่อจับนักโทษอีก 1 รายที่หนีเรือนจำบุรีรัมย์ได้เร็วๆ นี้ 
                     </div>
                 </div>
                 <div class="col-6 py-3">
                     <div class="card">  
-                        <input type="radio" class="radio mx-1" name="pattern[]" value='8'></input>  
+                        <input type="radio" class="radio mx-1" name="pattern[]" value='2'></input>  
                         รองโฆษก ตร.เชื่อจับนักโทษอีก 1 ที่หนีเรือนจำบุรีรัมย์ได้เร็วๆ นี้  
                     </div>
                 </div>

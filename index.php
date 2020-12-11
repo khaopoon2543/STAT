@@ -2,14 +2,7 @@
     session_start();
     include('server.php');
 
-    $countall = "SELECT countall FROM scores";
-                $result = mysqli_query($conn, $countall);
-    while($row = mysqli_fetch_array($result)){
-        $new_countall = $row['countall'];
-    }
-    $update_countall = "UPDATE scores SET countall = $new_countall";
-    mysqli_query($conn, $update_countall);
-    $_SESSION['countall'] = $new_countall;
+    $countall = $_SESSION['countall'];
 ?>
 
 <!doctype html>
