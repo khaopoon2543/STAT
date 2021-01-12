@@ -2,7 +2,11 @@
     session_start();
     include('server.php');
 
-    $countall = $_SESSION['countall'];
+    $countall = "SELECT row_id FROM scores4";
+    $result = mysqli_query($conn, $countall);
+        
+    $rowcount = mysqli_num_rows($result);
+    $_SESSION['countall'] = $rowcount;
 ?>
 
 <!doctype html>
@@ -54,9 +58,12 @@
         <div class="jumbotron jumbotron-fluid">  <!-- text-white bg-dark -->
             <div class="container">
                 <center>
-                    <h1 class="display-4">HELP US PLEASE <i class="far fa-tired"></i></h1>
+                    <h1>
+                        กรุณาเลือกพาดหัวข่าวที่สะดุดตาของคุณมากที่สุด
+                    </h1>
                     <p class="lead">
-                        กรุณาเลือกพาดหัวข่าวที่เพียงแว๊บแรกก็สะดุดตาของคุณมากที่สุด!!!
+                        แบบสอบถามนี้เป็นส่วนหนึ่งของรายวิชา 2206366 Statistics for Humanities Research
+                        ภาควิชาภาษาศาสตร์ คณะอักษรศาสตร์  
                     </p>
                     <div class="cardnum">   
                         <h1>4</h1> 

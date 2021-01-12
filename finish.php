@@ -55,7 +55,7 @@
                 <center>
                     <h1 class="display-4">THANKYOU <i class="far fa-laugh-squint"></i></h1>
                     <p class="lead">
-                        กล้ามาก เก่งมาก ขอบใจมาก!!!
+                        ขอขอบคุณที่กรุณาตอบแบบสอบถามค่ะ
                     </p>
                     <div class="cardnum" style="padding: 10px 20px 10px 20px; background: #f05454;">   
                         <h1><i class="fas fa-heart"></i></h1> 

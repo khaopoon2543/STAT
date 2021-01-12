@@ -1,6 +1,12 @@
 <?php 
     session_start();
     include('server.php');
+
+    $countall = "SELECT row_id FROM scores4";
+    $result = mysqli_query($conn, $countall);
+        
+    $rowcount = mysqli_num_rows($result);
+    $_SESSION['countall'] = $rowcount;
 ?>
 
 <!doctype html>
